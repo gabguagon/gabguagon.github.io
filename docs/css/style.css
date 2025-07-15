@@ -12,11 +12,12 @@
     --header-bg: #ffffff;
     --footer-bg: #5e35b1;
     --footer-text: #ffffff;
-
+    --hover-color: #6a42a8;        /* Color hover violeta */
     --success-color: #81c784;
+    --error-color: #e57373;
     --font-primary: 'Roboto', 'Segoe UI', sans-serif;
     --font-secondary: 'Open Sans', Arial, sans-serif;
-    --border-radius: 5px;
+    --border-radius: 8px;
     --shadow: 0 4px 6px rgba(126, 87, 194, 0.1);
     --transition: all 0.3s ease;
 }
@@ -34,6 +35,7 @@
     --header-bg: #2a1c40;
     --footer-bg: #1a1325;
     --footer-text: #eaddff;
+    --hover-color: #b39ddb;
     --shadow: 0 4px 6px rgba(179, 157, 219, 0.2);
 }
 
@@ -59,7 +61,7 @@ a {
 }
 
 a:hover {
-    color: var(--accent-color);
+    color: var(--hover-color);
 }
 
 ul {
@@ -96,7 +98,7 @@ ul {
 /* Botones */
 .btn {
     display: inline-block;
-    padding: 10px 25px;
+    padding: 12px 28px;
     border-radius: var(--border-radius);
     font-weight: 500;
     cursor: pointer;
@@ -104,16 +106,20 @@ ul {
     font-size: 1rem;
     border: none;
     text-align: center;
+    text-decoration: none;
 }
 
 .primary-btn {
     background-color: var(--primary-color);
     color: #fff;
+    border: 2px solid var(--primary-color);
 }
 
 .primary-btn:hover {
-    background-color: #0056b3;
+    background-color: var(--hover-color);
     color: #fff;
+    border-color: var(--hover-color);
+    transform: translateY(-2px);
 }
 
 .secondary-btn {
@@ -125,6 +131,7 @@ ul {
 .secondary-btn:hover {
     background-color: var(--primary-color);
     color: #fff;
+    transform: translateY(-2px);
 }
 
 .outline-btn {
@@ -137,10 +144,11 @@ ul {
 .outline-btn:hover {
     background-color: var(--primary-color);
     color: #fff;
+    transform: translateY(-2px);
 }
 
 .large-btn {
-    padding: 12px 30px;
+    padding: 14px 35px;
     font-size: 1.1rem;
 }
 
@@ -150,7 +158,7 @@ ul {
     border: none;
     cursor: pointer;
     margin-left: 10px;
-    padding: 5px;
+    padding: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -164,8 +172,9 @@ ul {
 }
 
 .theme-toggle:hover {
-    background-color: var(--accent-color);
+    background-color: var(--primary-color);
     color: white;
+    transform: scale(1.1);
 }
 
 .theme-toggle .fa-sun {
@@ -187,7 +196,7 @@ ul {
 /* Header */
 .header-modern {
     background-color: var(--header-bg);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(126, 87, 194, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -204,6 +213,7 @@ ul {
     font-size: 1.8rem;
     margin: 0;
     color: var(--primary-color);
+    font-weight: 700;
 }
 
 .logo p {
@@ -219,12 +229,14 @@ nav ul {
 nav ul li a {
     color: var(--text-color);
     font-weight: 500;
-    padding: 5px 10px;
+    padding: 8px 15px;
     border-radius: var(--border-radius);
+    transition: var(--transition);
 }
 
 nav ul li a:hover, nav ul li a.active {
     color: var(--primary-color);
+    background-color: var(--bg-color);
 }
 
 nav ul li a.active {
@@ -236,36 +248,52 @@ nav ul li a.active:after {
     content: '';
     position: absolute;
     bottom: -3px;
-    left: 10px;
-    right: 10px;
+    left: 15px;
+    right: 15px;
     height: 2px;
     background-color: var(--primary-color);
 }
 
 /* Hero section */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/ai-background.jpg');
+    background: linear-gradient(135deg, rgba(94, 53, 177, 0.9), rgba(126, 87, 194, 0.8)), url('../images/ai-background.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;
     padding: 120px 0;
     text-align: left;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(94, 53, 177, 0.1), rgba(126, 87, 194, 0.1));
+    pointer-events: none;
 }
 
 .hero-content {
     max-width: 700px;
+    position: relative;
+    z-index: 1;
 }
 
 .hero h2 {
-    font-size: 2.8rem;
+    font-size: 3rem;
     margin-bottom: 20px;
     line-height: 1.2;
+    font-weight: 700;
 }
 
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 30px;
-    opacity: 0.9;
+    opacity: 0.95;
+    line-height: 1.6;
 }
 
 .highlight {
@@ -287,13 +315,15 @@ nav ul li a.active:after {
 }
 
 .tech-stack span {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 5px 12px;
-    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 8px 16px;
+    border-radius: 25px;
     font-size: 0.9rem;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .tech-stack i {
@@ -318,17 +348,19 @@ nav ul li a.active:after {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     transition: var(--transition);
+    border: 1px solid var(--border-color);
 }
 
 .expertise-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px rgba(126, 87, 194, 0.15);
+    border-color: var(--primary-color);
 }
 
 .expertise-icon {
     width: 70px;
     height: 70px;
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     border-radius: 50%;
     display: flex;
@@ -344,6 +376,7 @@ nav ul li a.active:after {
 .expertise-card h3 {
     margin-bottom: 15px;
     color: var(--secondary-color);
+    font-size: 1.4rem;
 }
 
 .expertise-card ul {
@@ -354,6 +387,7 @@ nav ul li a.active:after {
     margin-bottom: 8px;
     position: relative;
     padding-left: 15px;
+    color: var(--text-color);
 }
 
 .expertise-card ul li:before {
@@ -377,11 +411,20 @@ nav ul li a.active:after {
     gap: 40px;
 }
 
+.skill-category {
+    background-color: var(--bg-secondary);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
 .skill-category h3 {
     margin-bottom: 20px;
     color: var(--secondary-color);
     padding-bottom: 10px;
     border-bottom: 2px solid var(--primary-color);
+    font-size: 1.3rem;
 }
 
 .skill-list {
@@ -397,6 +440,7 @@ nav ul li a.active:after {
 .skill-name {
     font-weight: 500;
     margin-bottom: 5px;
+    color: var(--text-color);
 }
 
 .skill-bar {
@@ -409,8 +453,9 @@ nav ul li a.active:after {
 .skill-bar span {
     display: block;
     height: 100%;
-    background-color: var(--primary-color);
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     border-radius: 10px;
+    transition: width 0.3s ease;
 }
 
 /* Featured Projects */
@@ -434,16 +479,18 @@ nav ul li a.active:after {
     transition: var(--transition);
     display: flex;
     flex-direction: column;
+    border: 1px solid var(--border-color);
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px rgba(126, 87, 194, 0.15);
+    border-color: var(--primary-color);
 }
 
 .project-image {
-    height: 100px;
-    background-color: var(--secondary-color);
+    height: 120px;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -464,12 +511,14 @@ nav ul li a.active:after {
 .project-content h3 {
     margin-bottom: 10px;
     color: var(--secondary-color);
+    font-size: 1.2rem;
 }
 
 .project-content p {
     margin-bottom: 15px;
     font-size: 0.95rem;
     flex-grow: 1;
+    color: var(--text-color);
 }
 
 .tech-tags {
@@ -481,9 +530,10 @@ nav ul li a.active:after {
 
 .tech-tags span {
     background-color: var(--border-color);
-    padding: 3px 10px;
+    padding: 4px 12px;
     border-radius: 15px;
     font-size: 0.8rem;
+    color: var(--text-color);
 }
 
 .view-all-projects {
@@ -508,6 +558,13 @@ nav ul li a.active:after {
     border-radius: var(--border-radius);
     padding: 25px;
     box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.testimonial:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(126, 87, 194, 0.12);
 }
 
 .testimonial-content {
@@ -516,12 +573,15 @@ nav ul li a.active:after {
 
 .testimonial-content p {
     font-style: italic;
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
 .testimonial-content p:before, .testimonial-content p:after {
     content: '"';
     font-size: 1.2rem;
     color: var(--primary-color);
+    font-weight: bold;
 }
 
 .testimonial-author {
@@ -564,19 +624,21 @@ nav ul li a.active:after {
     background-color: var(--card-bg);
     padding: 20px;
     border-radius: var(--border-radius);
-    box-shadow: var (--shadow);
+    box-shadow: var(--shadow);
     transition: var(--transition);
+    border: 1px solid var(--border-color);
 }
 
 .certification-item:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 15px rgba(126, 87, 194, 0.12);
+    border-color: var(--primary-color);
 }
 
 .certification-logo {
     width: 50px;
     height: 50px;
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -593,6 +655,7 @@ nav ul li a.active:after {
 .certification-info h4 {
     margin: 0 0 5px 0;
     font-size: 1rem;
+    color: var(--secondary-color);
 }
 
 .certification-info p {
@@ -603,7 +666,7 @@ nav ul li a.active:after {
 
 /* CTA Section */
 .cta {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/data-background.jpg');
+    background: linear-gradient(135deg, rgba(94, 53, 177, 0.9), rgba(126, 87, 194, 0.8)), url('../images/data-background.jpg');
     background-size: cover;
     background-position: center;
     padding: 80px 0;
@@ -614,6 +677,7 @@ nav ul li a.active:after {
 .cta h2 {
     font-size: 2.2rem;
     margin-bottom: 20px;
+    font-weight: 700;
 }
 
 .cta p {
@@ -622,7 +686,8 @@ nav ul li a.active:after {
     margin-left: auto;
     margin-right: auto;
     font-size: 1.1rem;
-    opacity: 0.9;
+    opacity: 0.95;
+    line-height: 1.6;
 }
 
 /* Footer */
@@ -643,11 +708,12 @@ footer {
 
 .footer-info h3 {
     margin-bottom: 10px;
+    color: var(--footer-text);
 }
 
 .footer-info p {
     margin: 5px 0;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .social-links {
@@ -679,7 +745,7 @@ footer {
 }
 
 .footer-nav ul li a {
-    color: #ccc;
+    color: rgba(255, 255, 255, 0.8);
     transition: var(--transition);
 }
 
@@ -693,13 +759,17 @@ footer {
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.85rem;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 /* Responsive Styles */
 @media (max-width: 992px) {
     .hero h2 {
-        font-size: 2.3rem;
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
     }
 }
 
@@ -720,6 +790,10 @@ footer {
 
     .hero-content {
         margin: 0 auto;
+    }
+
+    .hero h2 {
+        font-size: 2.2rem;
     }
 
     .hero-buttons {
@@ -777,7 +851,7 @@ footer {
 
 /* Estilos adicionales para la página Sobre Mí */
 .about-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/data-hero.jpg');
+    background: linear-gradient(135deg, rgba(94, 53, 177, 0.9), rgba(126, 87, 194, 0.8)), url('../images/data-hero.jpg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -788,6 +862,7 @@ footer {
 .about-hero h2 {
     font-size: 2.5rem;
     margin-bottom: 15px;
+    font-weight: 700;
 }
 
 .subtitle {
@@ -811,18 +886,19 @@ footer {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    background-color: #f0f0f0;
+    background-color: var(--bg-color);
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
     overflow: hidden;
     border: 5px solid var(--primary-color);
+    box-shadow: 0 8px 20px rgba(126, 87, 194, 0.2);
 }
 
 .profile-image i {
     font-size: 8rem;
-    color: #ccc;
+    color: var(--primary-color);
 }
 
 .profile-image img {
@@ -840,6 +916,7 @@ footer {
 .about-content p {
     margin-bottom: 20px;
     line-height: 1.7;
+    color: var(--text-color);
 }
 
 .personal-details {
@@ -852,6 +929,10 @@ footer {
 .detail-item {
     display: flex;
     align-items: flex-start;
+    padding: 15px;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
 }
 
 .detail-item i {
@@ -863,12 +944,13 @@ footer {
 
 .detail-item h4 {
     margin: 0 0 5px;
-    color: var (--secondary-color);
+    color: var(--secondary-color);
 }
 
 .detail-item p {
     margin: 0;
     font-size: 0.95rem;
+    color: var(--text-color);
 }
 
 .about-social {
@@ -898,7 +980,7 @@ footer {
     top: 0;
     height: 100%;
     width: 2px;
-    background-color: var(--primary-color);
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
 }
 
 .timeline-content {
@@ -908,6 +990,7 @@ footer {
     border-radius: var(--border-radius);
     padding: 25px;
     box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
 }
 
 .timeline-content:before {
@@ -925,6 +1008,7 @@ footer {
 .timeline-content h3 {
     color: var(--primary-color);
     margin: 0 0 5px;
+    font-size: 1.3rem;
 }
 
 .timeline-content h4 {
@@ -947,6 +1031,7 @@ footer {
 .achievement-list li {
     margin-bottom: 8px;
     position: relative;
+    color: var(--text-color);
 }
 
 .timeline-tech {
@@ -959,7 +1044,7 @@ footer {
 .timeline-tech span {
     background-color: var(--border-color);
     color: var(--text-color);
-    padding: 3px 10px;
+    padding: 4px 12px;
     border-radius: 15px;
     font-size: 0.8rem;
 }
@@ -983,12 +1068,13 @@ footer {
     border-radius: var(--border-radius);
     padding: 25px;
     box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
 }
 
 .education-icon {
     width: 50px;
     height: 50px;
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     border-radius: 50%;
     display: flex;
