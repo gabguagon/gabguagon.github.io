@@ -1180,7 +1180,7 @@ footer {
 
 .value-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(126, 87, 194, 0.15);
 }
 
 .value-icon {
@@ -1207,6 +1207,7 @@ footer {
 .value-content p {
     margin: 0;
     font-size: 0.95rem;
+    color: var(--text-color);
 }
 
 @media (max-width: 768px) {
@@ -1246,9 +1247,7 @@ footer {
 
 /* Estilos para la página de proyectos */
 .projects-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/projects-hero.jpg');
-    background-size: cover;
-    background-position: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     padding: 100px 0;
     text-align: center;
@@ -1328,7 +1327,7 @@ footer {
 }
 
 .project-image-full {
-    background-color: var(--secondary-color);
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
     color: white;
     height: 200px;
     display: flex;
@@ -1351,6 +1350,7 @@ footer {
 .project-description p {
     margin-bottom: 15px;
     line-height: 1.6;
+    color: var(--text-color);
 }
 
 .solution-highlights, .project-results {
@@ -1362,6 +1362,7 @@ footer {
     margin-bottom: 10px;
     position: relative;
     padding-left: 5px;
+    color: var(--text-color);
 }
 
 .solution-highlights li:before {
@@ -1471,9 +1472,7 @@ footer {
 
 /* Estilos para la página de contacto */
 .contact-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/contact-hero.jpg');
-    background-size: cover;
-    background-position: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     padding: 100px 0;
     text-align: center;
@@ -1503,7 +1502,7 @@ footer {
 
 .contact-info p, .contact-form-container p {
     margin-bottom: 30px;
-    color: var(--text-light);
+    color: var(--text-color);
 }
 
 .contact-methods {
@@ -1543,7 +1542,7 @@ footer {
 
 .contact-details p, .contact-details a {
     margin: 0;
-    color: var(--text-light);
+    color: var(--text-color);
     font-size: 0.95rem;
 }
 
@@ -1565,6 +1564,7 @@ footer {
     margin-bottom: 12px;
     display: flex;
     align-items: center;
+    color: var(--text-color);
 }
 
 .check-icon {
@@ -1611,17 +1611,19 @@ footer {
 
 .form-group input, .form-group textarea {
     padding: 12px 15px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     font-family: inherit;
     font-size: 1rem;
     transition: var(--transition);
+    background-color: var(--bg-secondary);
+    color: var(--text-color);
 }
 
 .form-group input:focus, .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+    box-shadow: 0 0 0 2px rgba(126, 87, 194, 0.2);
 }
 
 .checkbox-container {
@@ -1633,12 +1635,14 @@ footer {
 .checkbox-container input {
     width: 18px;
     height: 18px;
+    accent-color: var(--primary-color);
 }
 
 .checkbox-container label {
     margin: 0;
     font-size: 0.9rem;
     font-weight: normal;
+    color: var(--text-color);
 }
 
 .form-message {
@@ -1653,11 +1657,11 @@ footer {
 }
 
 .error-message {
-    color: #dc3545;
+    color: var(--error-color);
 }
 
 .error {
-    border-color: #dc3545 !important;
+    border-color: var(--error-color) !important;
 }
 
 /* FAQ Section */
@@ -1709,7 +1713,7 @@ footer {
 .faq-answer p {
     margin: 0;
     line-height: 1.6;
-    color: var(--text-light);
+    color: var(--text-color);
 }
 
 /* Media Queries para Contacto */
