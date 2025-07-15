@@ -1,43 +1,40 @@
 /* Estilos base */
 :root {
-    /* Colores para modo claro (por defecto) */
-    --primary-color: #0066cc;
-    --secondary-color: #2c3e50;
-    --accent-color: #3498db;
-    --bg-color: #f5f7fa;
-    --bg-secondary: #fff;
-    --card-bg: #f8f9fa;
-    --text-color: #333;
-    --text-light: #6c757d;
-    --border-color: #e9ecef;
-    --header-bg: #fff;
-    --footer-bg: #2c3e50;
-    --footer-text: #fff;
-    
-    /* Colores generales (iguales en ambos modos) */
-    --success-color: #28a745;
+    --primary-color: #7e57c2;      /* Violeta principal */
+    --secondary-color: #5e35b1;    /* Violeta oscuro */
+    --accent-color: #b39ddb;       /* Lavanda claro */
+    --bg-color: #f3e5f5;           /* Fondo lila claro */
+    --bg-secondary: #ffffff;       
+    --card-bg: #f8f5fc;            /* Cartas con un tono lavanda claro */
+    --text-color: #3e206d;         /* Texto violeta oscuro */
+    --text-light: #7e57c2;         
+    --border-color: #e0d3f5;       
+    --header-bg: #ffffff;
+    --footer-bg: #5e35b1;
+    --footer-text: #ffffff;
+
+    --success-color: #81c784;
     --font-primary: 'Roboto', 'Segoe UI', sans-serif;
     --font-secondary: 'Open Sans', Arial, sans-serif;
     --border-radius: 5px;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow: 0 4px 6px rgba(126, 87, 194, 0.1);
     --transition: all 0.3s ease;
 }
 
-/* Modo oscuro */
 [data-theme="dark"] {
-    --primary-color: #3c92e4;
-    --secondary-color: #64748b;
-    --accent-color: #60a5fa;
-    --bg-color: #121212;
-    --bg-secondary: #1e1e1e;
-    --card-bg: #2d2d2d;
-    --text-color: #e2e8f0;
-    --text-light: #cbd5e1;
-    --border-color: #2d3748;
-    --header-bg: #1a1a1a;
-    --footer-bg: #1a1a1a;
-    --footer-text: #e2e8f0;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --primary-color: #9575cd;      
+    --secondary-color: #b39ddb;
+    --accent-color: #d1c4e9;
+    --bg-color: #1a1325;
+    --bg-secondary: #2a1c40;
+    --card-bg: #392752;
+    --text-color: #f3e5f5;
+    --text-light: #d1c4e9;
+    --border-color: #4b3a63;
+    --header-bg: #2a1c40;
+    --footer-bg: #1a1325;
+    --footer-text: #eaddff;
+    --shadow: 0 4px 6px rgba(179, 157, 219, 0.2);
 }
 
 /* Reset y estilos generales */
