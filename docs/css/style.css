@@ -1,0 +1,37 @@
+:root {
+    --primary-color: #8e44ad;           /* Púrpura fuerte */
+    --secondary-color: #5e3370;         /* Violeta oscuro */
+    --accent-color: #a678d6;            /* Lavanda */
+    --bg-color: #f9f4fc;                /* Lavanda muy claro */
+    --bg-secondary: #fff;               /* Blanco */
+    --card-bg: #f6f0fa;                 /* Lavanda suave */
+    --text-color: #3d2a4e;              /* Violeta grisáceo */
+    --text-light: #7f7094;              /* Gris lavanda */
+    --border-color: #e3d8f0;            /* Borde lavanda claro */
+    --header-bg: #fff;
+    --footer-bg: #5e3370;               /* Igual que secondary */
+    --footer-text: #fff;
+
+    --success-color: #9acd32;           /* Verde lima */
+    --font-primary: 'Roboto', 'Segoe UI', sans-serif;
+    --font-secondary: 'Open Sans', Arial, sans-serif;
+    --border-radius: 5px;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+    --primary-color: #b67ee9;           /* Lavanda brillante */
+    --secondary-color: #d9b8ff;         /* Lavanda pastel */
+    --accent-color: #e0cfff;            /* Lavanda claro */
+    --bg-color: #1d1327;                /* Violeta profundo */
+    --bg-secondary: #2a1c3f;            /* Fondo secciones */
+    --card-bg: #322344;                 /* Fondo tarjetas */
+    --text-color: #f0eaff;              /* Texto claro */
+    --text-light: #c3aedc;              /* Texto lavanda claro */
+    --border-color: #4e3a5f;            /* Borde tenue */
+    --header-bg: #1a1228;
+    --footer-bg: #1a1228;
+    --footer-text: #e0cfff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
