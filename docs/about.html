@@ -7,6 +7,23 @@
     <meta name="description" content="Learn more about Gabriela Gonza, her professional background and experience in operations planning and data analysis.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Solo los estilos básicos necesarios para el layout en paralelo */
+        .location-resume-container {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .location-resume-container .detail-item {
+            flex: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .location-resume-container {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="header-modern">
@@ -58,30 +75,56 @@
 
                         <div class="personal-details">
                             <div class="detail-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <div>
+                                    <h4>Education</h4>
+                                    <p>Industrial Engineer – Universidad Nacional de Salta 
+                                        <a href="images/Titulo.pdf" download class="certificate-btn">
+                                            <i class="fas fa-download"></i> Certificate
+                                        </a>
+                                    </p>
+                                    <p>Data Analyst – Platzi 
+                                        <a href="images/diploma-data-analyst.pdf" download class="certificate-btn">
+                                            <i class="fas fa-download"></i> Certificate
+                                        </a>
+                                    </p>
+                                    <p>Technical Degree in Data Science – UPATECO (In progress)</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="personal-details">
+                            <div class="detail-item">
                                 <i class="fas fa-code"></i>
                                 <div>
                                     <h4>Technical Tools</h4>
                                     <p>Excel, Power BI, Tableau, SAP, Python, MySQL</p>
                                 </div>
                             </div>
-                            <div class="detail-item">
-                                <i class="fas fa-graduation-cap"></i>
-                                <div>
-                                    <h4>Education</h4>
-                                    <p>Industrial Engineer – Universidad Nacional de Salta</p>
-                                    <p>Data Analyst – Platzi</p>
-                                    <p>Technical Degree in Data Science – UPATECO (In progress)</p>
+                        </div>
+                        
+                        <div class="personal-details">
+                            <div class="location-resume-container">
+                                <div class="detail-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div>
+                                        <h4>Location</h4>
+                                        <p>Salta - Argentina</p>
+                                        <p>Available for remote work</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="detail-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div>
-                                    <h4>Location</h4>
-                                    <p>Available for remote work</p>
+                                
+                                <div class="detail-item">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <div>
+                                        <h4>Resume</h4>
+                                        <a href="images/CV_Gabriela_Gonza.pdf" download class="cv-download-btn">
+                                            <i class="fas fa-download"></i> Download CV
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -91,7 +134,6 @@
             <div class="container">
                 <h2 class="section-title">Work Experience</h2>
                 <div class="timeline">
-                    <!-- You can add timeline items like this for each job -->
                     <div class="timeline-item">
                         <div class="timeline-content">
                             <h3>Operational Planning Leader</h3>
@@ -113,7 +155,6 @@
                             </ul>
                         </div>
                     </div>
-                    <!-- Add other roles similarly -->
                 </div>
             </div>
         </section>
@@ -133,7 +174,7 @@
                 <div class="footer-info">
                     <h3>Gabriela Gonza</h3>
                     <p>Industrial Engineer & Data Analyst</p>
-                    <p>Email: gabriela@example.com</p>
+                    <p>Email: gabguagon@hotmail.com</p>
                 </div>
                 <div class="social-links">
                         <a href="https://www.linkedin.com/in/gabriela-gonza-90293746/" target="_blank" aria-label="LinkedIn">
